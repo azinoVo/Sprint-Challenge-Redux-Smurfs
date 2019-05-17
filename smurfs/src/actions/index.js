@@ -8,17 +8,6 @@ export const FETCH_START = 'FETCH_SMURFS';
 export const GET_SMURFS = 'GET_SMURFS';
 export const FETCH_ERROR = 'FETCH_ERROR';
 
-/*
-  For this project you'll need at least 2 action creators for the main portion,
-   and 2 more for the stretch problem.
-   Be sure to include action types for each type of action creator. Also, be sure to mind
-     the "pending" states like, fetching, creating, updating and deleting.
-   C - addSmurf
-   R - getSmurfs
-   U - updateSmurf
-   D - deleteSmurf
-*/
-
 export const getSmurfs = () => dispatch => {
   dispatch({ type: FETCH_START });
 
@@ -33,9 +22,9 @@ export const getSmurfs = () => dispatch => {
     });
 };
 
-export const POSTING_SMURF = 'POSTING_SMURF'
-export const ADD_SMURF = 'ADD_SMURF'
-export const ADD_ERROR = 'ADD_ERROR'
+export const POSTING_SMURF = 'POSTING_SMURF';
+export const ADD_SMURF = 'ADD_SMURF';
+export const ADD_ERROR = 'ADD_ERROR';
 
 export const addSmurfs = smurfInfo => dispatch => {
   dispatch({ type: POSTING_SMURF });
@@ -50,6 +39,17 @@ export const addSmurfs = smurfInfo => dispatch => {
       dispatch({ type: ADD_ERROR, payload: err})
     });
 };
+
+/*
+  For this project you'll need at least 2 action creators for the main portion,
+   and 2 more for the stretch problem.
+   Be sure to include action types for each type of action creator. Also, be sure to mind
+     the "pending" states like, fetching, creating, updating and deleting.
+   C - addSmurf
+   R - getSmurfs
+   U - updateSmurf
+   D - deleteSmurf
+*/
 
 
 

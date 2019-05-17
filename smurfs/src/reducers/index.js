@@ -1,6 +1,6 @@
 // action types here
-import { FETCH_START, GET_SMURFS, FETCH_ERROR } from '../actions'
-import { POSTING_SMURF, ADD_SMURF, ADD_ERROR } from '../actions'
+import { FETCH_START, GET_SMURFS, FETCH_ERROR } from '../actions';
+import { POSTING_SMURF, ADD_SMURF, ADD_ERROR } from '../actions';
 
 const initialState = {
   smurfs: [],
@@ -9,10 +9,9 @@ const initialState = {
   postingSmurf: false,
   error: false,
   addingError: false
-  
 }
 
-const reducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_START:
       return {
@@ -25,7 +24,7 @@ const reducer = (state = initialState, action) => {
 
       return {
         ...state,
-        smurfs: [...state.smurfs, ...action.payload]
+        smurfs: action.payload
       };
 
     case FETCH_ERROR:
@@ -41,6 +40,8 @@ const reducer = (state = initialState, action) => {
       };
 
     case ADD_SMURF:
+      console.log(action.payload);
+
       return {
         ...state,
         smurfs: [...action.payload]
@@ -57,4 +58,3 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
