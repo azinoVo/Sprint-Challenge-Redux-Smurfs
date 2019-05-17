@@ -13,14 +13,18 @@ class AddSmurf extends Component {
     }
 
     handleChanges = event => {
-
+        console.log(this.state.smurfInfo);
+        this.setState({ smurfInfo: {...this.state.smurfInfo,
+            [event.target.name]: event.target.value
+        }})
     }
 
     addSmurf = event => {
+        event.preventDefault();
 
     }
 
-    
+
     render() {
         return (
             <div>
@@ -42,13 +46,13 @@ class AddSmurf extends Component {
                     />
 
                     <input
-                        type="text"
-                        name='name'
+                        type="number"
+                        name='height'
                         value={this.state.smurfInfo.height}
                         onChange={this.handleChanges}
                         placeholder="...height in cm"
                     />
-                    <button>Add Smurf</button>
+                    <button onClick={this.addSmurf}>Add Smurf</button>
                 </form>
             </div>
         );

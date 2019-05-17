@@ -22,7 +22,7 @@ export const FETCH_ERROR = 'FETCH_ERROR';
 export const getSmurfs = () => dispatch => {
   dispatch({ type: FETCH_START });
 
-  axios.get('http://localhost:3333/smurfs')
+  axios.get('http://localhost:3333/smurfs/')
     .then(res => {
       console.log(res)
       dispatch({ type: GET_SMURFS, payload: res.data })
