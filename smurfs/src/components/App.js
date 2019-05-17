@@ -15,10 +15,11 @@ class App extends Component {
 
 componentDidMount() {
   this.props.getSmurfs();
-  console.log(this.props.smurfs);
 }
 
   render() {
+
+    console.log(this.props.state);
     return (
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>

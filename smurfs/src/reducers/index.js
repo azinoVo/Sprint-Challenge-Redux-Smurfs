@@ -6,9 +6,10 @@ const initialState = {
   smurfs: [],
   fetchingSmurfs: false,
   addingSmurf: false,
-  error: false
-  //  updatingSmurf: false,
-  //  deletingSmurf: false,
+  postingSmurf: false,
+  error: false,
+  addingError: false
+  
 }
 
 const reducer = (state = initialState, action) => {
@@ -35,17 +36,20 @@ const reducer = (state = initialState, action) => {
 
     case POSTING_SMURF:
       return {
-
+        ...state,
+        postingSmurf: true
       };
 
     case ADD_SMURF:
       return {
-
+        ...state,
+        smurfs: [...action.payload]
       };
 
     case ADD_ERROR:
       return {
-
+        ...state,
+        addingError: true
       };
 
     default:
