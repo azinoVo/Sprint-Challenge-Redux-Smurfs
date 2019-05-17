@@ -1,5 +1,6 @@
 // action types here
 import { FETCH_START, GET_SMURFS, FETCH_ERROR } from '../actions'
+import { POSTING_SMURF, ADD_SMURF, ADD_ERROR } from '../actions'
 
 const initialState = {
   smurfs: [],
@@ -30,6 +31,21 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         error: true
+      };
+
+    case POSTING_SMURF:
+      return {
+
+      };
+
+    case ADD_SMURF:
+      return {
+
+      };
+
+    case ADD_ERROR:
+      return {
+
       };
 
     default:

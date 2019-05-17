@@ -33,3 +33,23 @@ export const getSmurfs = () => dispatch => {
     });
 };
 
+export const POSTING_SMURF = 'POSTING_SMURF'
+export const ADD_SMURF = 'ADD_SMURF'
+export const ADD_ERROR = 'ADD_ERROR'
+
+export const addSmurfs = smurfInfo => dispatch => {
+  dispatch({ type: POSTING_SMURF });
+
+  axios.post('http://localhost:3333/smurfs/', smurfInfo)
+    .then(res => {
+      console.log(res)
+      dispatch({ type: ADD_SMURF, payload: res.data })
+    })
+    .catch(err => {
+      console.log(err)
+      dispatch({ type: ADD_ERROR, payload: err})
+    });
+};
+
+
+

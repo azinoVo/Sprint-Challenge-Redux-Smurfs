@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {addSmurf} from '../actions'
+
 
 class AddSmurf extends Component {
     constructor() {
@@ -21,6 +24,7 @@ class AddSmurf extends Component {
 
     addSmurf = event => {
         event.preventDefault();
+        this.props.addSmurf(this.state.smurfInfo);
 
     }
 
@@ -59,4 +63,9 @@ class AddSmurf extends Component {
     }
 }
 
-export default AddSmurf;
+const mapStateToProps = state => ({
+    smurfs: state.smurfs,
+    addingSmurf: state.addingSmurf
+  });
+
+export default connect(mapStateToProps, {addSmurf})(AddSmurf);
