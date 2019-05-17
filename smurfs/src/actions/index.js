@@ -19,7 +19,7 @@ export const FETCH_ERROR = 'FETCH_ERROR';
    D - deleteSmurf
 */
 
-export const login = dispatch => {
+export const getSmurfs = () => dispatch => {
   dispatch({ type: FETCH_START });
 
   axios.get('http://localhost:3333/smurfs')
@@ -29,11 +29,7 @@ export const login = dispatch => {
     })
     .catch(err => {
       console.log(err)
-      
-    } 
-      
-
-      
-      );
+      dispatch({ type: FETCH_ERROR, payload: err})
+    });
 };
 
